@@ -312,7 +312,7 @@ def calc_rotated_spec_accels(time_step,
     freqs = np.linspace(0, 1. / (2 * time_step), num=fourier_amps[0].size)
 
     if processes > 1:
-        with clsoing(multiprocessing.Pool(processes=processes)) as pool:
+        with closing(multiprocessing.Pool(processes=processes)) as pool:
             groups = pool.map(
                 functools.partial(
                     calc_rotated_oscillator_resp,
